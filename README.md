@@ -158,3 +158,11 @@ on Step 7 (Run Playwright tests), we are setting 2 environment variables, the BA
 ```
 
 We also set `x-vercel-set-bypass-cookie` to true so the header value is also sent on subsequent requests should we need it. [Read more](https://vercel.com/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation)
+
+5. Test everything
+
+Merge the changes to your main branch, create a small changeset on any branch and create a pull request against your main branch and you should see your new workflow running:
+
+![Github end-to-end tests workflow](./images/github-workflow.png)
+
+It will run again on every push

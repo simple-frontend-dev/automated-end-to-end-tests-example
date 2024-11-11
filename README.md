@@ -4,7 +4,7 @@ Repository with code example for [Automated end-to-end tests on Simple Frontend 
 
 ## Local setup
 
-1. We start by installing [Playwright](https://playwright.dev/docs/intro) and following the CLI:
+1. Start by installing [Playwright](https://playwright.dev/docs/intro) and follow the CLI:
 
 ```bash
 pnpm create playwright --install-deps
@@ -14,17 +14,17 @@ pnpm create playwright --install-deps
 > Add a Github Actions workflow? y
 > Install Playwright browsers? y
 
-The CLI added folders to our .gitignore configuration, packages to our dev dependencies and a created the following files:
+The CLI added folders to our .gitignore configuration, packages to our dev dependencies and created the following files:
 
 - `playwright.config.ts` which is Playwright's configuration file
 - `demo-todo-app.spec.ts` in `test-examples` which contains an advanced use case for a todo app covering most of large apps use cases. We will ignore this file but you can use it as a quick reference later
 - `example.spec.ts` in e2e-tests which is where we will write our main tests for this demo
 
-2. We update `playwright.config.ts`
+2. Update `playwright.config.ts`
 
-For starters, let's focus on the simplest setup to make sure our website is up and running and its core functionality is running so we will remove tests for firefox and webkit for now under projects, comment them out.
+For starters, let's focus on the simplest setup to make sure our website is up and running with its core functionality so we will remove tests for firefox and webkit for now under projects, comment them out.
 
-We will add a BASE_URL env variable, under use add the following:
+Add a BASE_URL env variable, under use add the following:
 
 ```javascript
 use: {
@@ -32,7 +32,7 @@ use: {
 }
 ```
 
-3. We prepare our first test, update `example.spec.ts` with only one test case:
+3. Prepare your first test, update `example.spec.ts` with only one test case:
 
 ```javascript
 test("is up and running", async ({ page }) => {
@@ -63,7 +63,7 @@ BASE_URL=%YOUR_BASE_URL% pnpm run e2e
 
 ## CI Setup
 
-There are many different setups you can go for such as running a local server to validate your end-to-end tests against but this is not what I would recommend. What will reaLLy bring value to you is running your end-to-end tests against your [preview deployments](https://www.simplefrontend.dev/docs/ci/preview-deployments/) before merging your changes to your main production branch.
+There are many different setups you can go for such as running a local server to validate your end-to-end tests against but this is not what I would recommend. What will really bring value to you is running your end-to-end tests against your [preview deployments](https://www.simplefrontend.dev/docs/ci/preview-deployments/) before merging your changes to your main production branch.
 
 So here it depends on your hosting setup and provider, I will cover the most popular ones.
 
@@ -149,7 +149,7 @@ on Step 7 (Run Playwright tests), we are setting 2 environment variables, the BA
   },
 ```
 
-We also set `x-vercel-set-bypass-cookie` to true so the header value is also sent on subsequent requests should we need it. [Read more](https://vercel.com/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation)
+Also set `x-vercel-set-bypass-cookie` to true so the header value is also sent on subsequent requests should we need it. Read more about Protection Bypass for Automation on [Vercel](https://vercel.com/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation)
 
 5. Test everything
 

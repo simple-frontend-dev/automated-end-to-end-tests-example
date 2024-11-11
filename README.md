@@ -1,16 +1,8 @@
-# Automated end-to-end tests example
+# Automated end-to-end tests recipie and code example
 
 Repository with code example for [Automated end-to-end tests on Simple Frontend docs](https://www.simplefrontend.dev/docs/ci/automated-end-to-end-tests/)
 
-## Setup
-
-```bash
-pnpm install
-```
-
-## Automated end-to-end tests recipie
-
-### Local setup
+## Local setup
 
 1. We start by installing [Playwright](https://playwright.dev/docs/intro) and following the CLI:
 
@@ -69,13 +61,13 @@ Run the script command using your preferred package manager:
 BASE_URL=%YOUR_BASE_URL% pnpm run e2e
 ```
 
-### CI Setup
+## CI Setup
 
 There are many different setups you can go for such as running a local server to validate your end-to-end tests against but this is not what I would recommend. What will reaLLy bring value to you is running your end-to-end tests against your [preview deployments](https://www.simplefrontend.dev/docs/ci/preview-deployments/) before merging your changes to your main production branch.
 
 So here it depends on your hosting setup and provider, I will cover the most popular ones.
 
-#### Vercel
+### Vercel
 
 If you synced your github repository with a vercel project, you should already have preview deployments running out of the box.
 

@@ -161,4 +161,8 @@ We also set `x-vercel-set-bypass-cookie` to true so the header value is also sen
 
 5. Test everything
 
-Merge the changes to your main branch and create a small changeset on any branch targeting it
+Merge the changes to your main branch, create a small changeset on any branch and create a pull request against your main branch and you should see your new workflow running:
+
+![Github end-to-end tests workflow](./images/github-workflow.png)
+
+It will run again on every push

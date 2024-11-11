@@ -157,4 +157,4 @@ Merge the changes to your main branch, create a small changeset on any branch an
 
 ![Github end-to-end tests workflow](./images/github-workflow.png)
 
-It will run again on every push (like on this demo branch!)
+It will run again on every push!
